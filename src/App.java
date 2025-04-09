@@ -1,14 +1,31 @@
 public class App {
-    public static void main(String[] args) {
-        // Crear una instancia de la clase para acceder a los métodos
-        EjerciciosRecursivos er = new EjerciciosRecursivos();
+    public static void main(String[] args) throws Exception {
+        System.out.println("Hello, World!");
         
-        // Llamar y mostrar el resultado de fibonacci(5)
-        int resultadoFibonacci = er.fibonacci(5);
-        System.out.println("El resultado de fibonacci(5) es: " + resultadoFibonacci);
-        
-        // Llamar y mostrar el resultado de sumaConsecutivos(5)
-        int resultadoSumaConsecutivos = er.sumaConsecutivos(5);
-        System.out.println("El resultado de sumaConsecutivos(5) es: " + resultadoSumaConsecutivos);
+
+        int n = 5;
+        int resultadoFinal= factorial(n);
+        System.out.println("Resultado:" + resultadoFinal);
+
+        EjerciciosRecursivos ejercicios = new EjerciciosRecursivos();
+
+        int fibo = ejercicios.fibonacci(5);
+        System.out.println("Fibonacci: " + fibo);
+
+        int suma = ejercicios.sumaConsecutivos(5);
+        System.out.println("Suma de consecutivos hasta 5: " + suma);
+
     }
-}    
+
+    public static int factorial(int n){
+        if(n==0){
+            System.out.println("Alcanzar el caso base");
+            return 1;
+        }
+
+        int resultado= n+ factorial(n-1);
+        System.out.println("Calculando factorial de:"+ n + " * factorial("+(n-1)+ " -1)");
+        return resultado;
+    }
+    
+}
